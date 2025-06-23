@@ -1,0 +1,256 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>{% block title %}Blog{% endblock %}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	
+	{% block meta %}
+	<meta name="description" content="{% block description %}Full Stack Engineer specializing in Development, Data Analysis, Machine Learning, and DevOps{% endblock %}">
+	<meta name="keywords" content="{% block keywords %}blog, developer, data analyst, machine learning, devops{% endblock %}">
+	<meta name="author" content="Harpreet Singh">
+	{% endblock %}
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+	
+	<link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+	<link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="manifest" href="{% static 'site.webmanifest' %}">
+	
+	{% block extra_css %}
+	<!-- Additional CSS for child templates -->
+	{% endblock %}
+</head>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="/">Digital Diary</a>
+			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav nav ml-auto">
+					<li class="nav-item"><a href="{% url 'blog_list' %}#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="{% url 'blog_list' %}#about-section" class="nav-link"><span>About</span></a></li>
+					<li class="nav-item"><a href="{% url 'blog_list' %}#resume-section" class="nav-link"><span>Resume</span></a></li>
+					<li class="nav-item"><a href="{% url 'blog_list' %}#project-section" class="nav-link"><span>Projects</span></a></li>
+					<li class="nav-item"><a href="{% url 'blog_list' %}" class="nav-link"><span>Blog</span></a></li>
+					<li class="nav-item"><a href="{% url 'blog_list' %}#contact-section" class="nav-link"><span>Contact</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	{% block content %}
+	<!-- Default content will be overridden by child templates -->
+	{% endblock %}
+
+	<!-- Footer -->
+	<footer class="ftco-footer ftco-bg-dark ftco-section minimal-footer">
+		<div class="container">
+			<div class="row mb-5 align-items-start">
+				<div class="col-md-5 mb-4 mb-md-0">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2 mb-3">About</h2>
+						<p class="text-justify mb-3">Full Stack Engineer with expertise in Development, Data Analysis, Machine Learning, and DevOps. Passionate about creating innovative solutions and sharing knowledge through my blog.</p>
+						<ul class="ftco-footer-social list-unstyled d-flex gap-3 mt-3">
+							<li class="ftco-animate"><a href="https://www.linkedin.com/in/harpreet22/" target="_blank" title="LinkedIn"><span class="icon-linkedin"></span></a></li>
+							<li class="ftco-animate"><a href="https://github.com/iharpreet0809" target="_blank" title="GitHub"><span class="icon-github"></span></a></li>
+						</ul>
+					</div>
+					<div class="ftco-footer-widget mb-4 mt-4">
+						<h2 class="ftco-heading-2 mb-3">Have a Questions?</h2>
+						<ul class="footer-contact list-unstyled">
+							<li><span class="icon icon-map-marker"></span> Ahmedabad, India</li>
+							<li><a href="mailto:talkwithharpreet@gmail.com" style="color:inherit;"><span class="icon icon-envelope"></span> talkwithharpreet@gmail.com</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-7">
+					<div class="ftco-footer-widget mb-4">
+						<h2 class="ftco-heading-2 mb-3" id='contact-msg'>Contact Me</h2>
+						<form action="{% url 'contact' %}" method="post" class="footer-contact-form">
+							{% csrf_token %}
+							<div class="form-row">
+								<div class="form-group col-md-6 mb-3">
+									<input type="text" name="name" class="form-control" placeholder="Your Name" required>
+								</div>
+								<div class="form-group col-md-6 mb-3">
+									<input type="email" name="email" class="form-control" placeholder="Your Email" required>
+								</div>
+							</div>
+							<div class="form-group mb-3">
+								<input type="text" name="subject" class="form-control" placeholder="Subject" required>
+							</div>
+							<div class="form-group mb-3">
+								<textarea name="message" class="form-control" rows="3" placeholder="Message" required></textarea>
+							</div>
+							<button type="submit" class="btn btn-primary btn-block w-100">Send Message</button>
+						</form><br>
+						{% if messages %}
+							{% for message in messages %}
+								<div class="alert alert-{{ message.tags }}">
+									{{ message }}
+								</div>
+							{% endfor %}
+						{% endif %}
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-12 text-center">
+					<p class="mb-0" style="color: #aaa; font-size: 0.98rem;">&copy; <script>document.write(new Date().getFullYear());</script> All rights reserved | Harpreet Singh</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+	<!-- Scripts -->
+	<script src="{% static 'js/jquery.min.js' %}"></script>
+	<script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+	<script src="{% static 'js/owl.carousel.min.js' %}"></script>
+	<script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'js/aos.js' %}"></script>
+	<script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+	<script src="{% static 'js/scrollax.min.js' %}"></script>
+	<script src="{% static 'js/main.js' %}"></script>
+	<script src="{% static 'js/typing-animation.js' %}"></script>
+
+	{% block extra_js %}
+	<!-- Additional JavaScript for child templates -->
+	{% endblock %}
+
+	<style>
+	.minimal-footer {
+		border-radius: 0;
+		background: #181c23;
+		color: #e9ecef;
+		padding: 2.5rem 0 1.2rem 0;
+		margin-top: 3rem;
+		box-shadow: 0 -2px 16px 0 rgba(0,0,0,0.08);
+	}
+	.minimal-footer .ftco-heading-2 {
+		color: #fff;
+		font-size: 1.25rem;
+		font-weight: 600;
+		margin-bottom: 1.1rem;
+		letter-spacing: 0.01em;
+	}
+	.minimal-footer p, .minimal-footer .form-control, .minimal-footer input, .minimal-footer textarea {
+		color: #e9ecef;
+		font-size: 1.01rem;
+	}
+	.minimal-footer .ftco-footer-social a {
+		color: #b0b8c1;
+		font-size: 1.35rem;
+		transition: color 0.2s, transform 0.2s;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.minimal-footer .ftco-footer-social a:hover {
+		color: #0d6efd;
+		transform: scale(1.15) rotate(-8deg);
+	}
+	.minimal-footer .footer-contact-form .form-control {
+		background: #232733;
+		border: 1px solid #232733;
+		border-radius: 0.5rem;
+		color: #e9ecef;
+		font-size: 1rem;
+		padding: 0.7rem 1rem;
+		margin-bottom: 0.2rem;
+		transition: border-color 0.2s, box-shadow 0.2s;
+	}
+	.minimal-footer .footer-contact-form .form-control:focus {
+		border-color: #0d6efd;
+		box-shadow: 0 0 0 2px rgba(13,110,253,0.08);
+		background: #232733;
+		color: #fff;
+	}
+	.minimal-footer .footer-contact-form button[type="submit"] {
+		background: #0d6efd;
+		border: none;
+		border-radius: 0.5rem;
+		color: #fff;
+		font-weight: 600;
+		font-size: 1.05rem;
+		padding: 0.7rem 0;
+		margin-top: 0.2rem;
+		transition: background 0.2s, box-shadow 0.2s;
+		box-shadow: 0 2px 8px rgba(13,110,253,0.08);
+	}
+	.minimal-footer .footer-contact-form button[type="submit"]:hover {
+		background: #0056b3;
+	}
+	@media (max-width: 768px) {
+		.minimal-footer .row.mb-5.align-items-start {
+			flex-direction: column;
+		}
+		.minimal-footer .col-md-5, .minimal-footer .col-md-7 {
+			max-width: 100%;
+			flex: 0 0 100%;
+		}
+	}
+	.minimal-footer .footer-contact {
+		margin-top: 0.5rem;
+		color: #b0b8c1;
+		font-size: 1.01rem;
+		padding-left: 0;
+	}
+	.minimal-footer .footer-contact li {
+		display: flex;
+		align-items: center;
+		gap: 0.7em;
+		margin-bottom: 0.4rem;
+	}
+	.minimal-footer .footer-contact .icon {
+		color: #0d6efd;
+		font-size: 1.1em;
+		margin-right: 0.5em;
+	}
+	.minimal-footer .footer-contact a {
+		color: #b0b8c1;
+		text-decoration: none;
+		transition: color 0.2s;
+	}
+	.minimal-footer .footer-contact a:hover {
+		color: #0d6efd;
+		text-decoration: underline;
+	}
+	</style>
+
+</body>
+</html> 

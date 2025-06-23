@@ -1,0 +1,21 @@
+# Python Dependencies for Django Portfolio Application
+# This file lists all required Python packages and their versions
+
+# Django Core Dependencies
+asgiref==3.8.1          # ASGI utilities for Django
+Django==5.2.3           # Main Django web framework
+mysqlclient==2.2.7      # MySQL database adapter for Python
+sqlparse==0.5.3         # SQL parsing and formatting library
+tzdata==2025.2          # Timezone data for Django
+
+# Production Server
+gunicorn>=20.0          # Production WSGI server for Python web applications
+
+# Image Processing
+Pillow>=9.0.0           # Python Imaging Library for image handling
+
+# Rich Text Editor
+django-ckeditor>=6.7.0  # CKEditor integration for Django (rich text editing)
+
+# Tagging System
+django-taggit>=4.0.0    # Tagging system for Django models
