@@ -2394,22 +2394,6 @@ pre code {
   margin-left: 50%;
 }
 
-.offset-7 {
-  margin-left: 58.33333%;
-}
-
-.offset-8 {
-  margin-left: 66.66667%;
-}
-
-.offset-9 {
-  margin-left: 75%;
-}
-
-.offset-10 {
-  margin-left: 83.33333%;
-}
-
 .offset-11 {
   margin-left: 91.66667%;
 }
@@ -3153,6 +3137,37 @@ pre code {
     margin-left: 91.66667%;
   }
 }
+
+/* --- Responsive Fixes for All Viewports --- */
+@media (max-width: 400px) {
+  html { font-size: 14px; }
+  .container, .ftco-navbar-light .container { padding-left: 4px; padding-right: 4px; }
+  .ftco-navbar-light .navbar-brand { font-size: 1.1rem; }
+  .ftco-navbar-light .navbar-toggler { top: 6px; right: 6px; font-size: 1.1rem; }
+  .ftco-navbar-light .navbar-nav .nav-link { font-size: 1rem; padding: 0.9rem 0; }
+}
+@media (max-width: 768px) {
+  html { font-size: 15px; }
+  .container, .ftco-navbar-light .container { padding-left: 8px; padding-right: 8px; }
+  .ftco-navbar-light .navbar-brand { font-size: 1.2rem; }
+  .ftco-navbar-light .navbar-nav .nav-link { font-size: 1.05rem; }
+  .card, .blog-modern-card, .blog-glass-card { border-radius: 0.7rem !important; }
+  .card-body, .blog-modern-card .card-body, .blog-glass-card .card-body { padding: 1rem !important; }
+  .btn, .btn-primary, .btn-outline-primary, .btn-warning { font-size: 1rem; padding: 0.7rem 1.1rem; }
+}
+@media (max-width: 1024px) {
+  html { font-size: 16px; }
+  .container, .ftco-navbar-light .container { padding-left: 16px; padding-right: 16px; }
+}
+@media (min-width: 1440px) {
+  html { font-size: 18px; }
+  .container, .ftco-navbar-light .container { max-width: 1320px; }
+}
+/* Remove nav bullets and ensure tap targets */
+.ftco-navbar-light .navbar-nav, .ftco-navbar-light .navbar-nav .nav-item { list-style: none; }
+.ftco-navbar-light .navbar-nav .nav-link { min-height: 48px; display: flex; align-items: center; }
+/* Prevent horizontal overflow */
+body, html { overflow-x: hidden; }
 
 @media (min-width: 1200px) {
   .col-xl {
@@ -7931,11 +7946,6 @@ a.badge-dark.focus {
   border-color: #856404;
 }
 
-.list-group-item-danger {
-  color: #721c24;
-  background-color: #f5c6cb;
-}
-
 .list-group-item-danger.list-group-item-action:hover,
 .list-group-item-danger.list-group-item-action:focus {
   color: #721c24;
@@ -10237,6 +10247,146 @@ button.bg-dark:focus {
     -ms-flex-item-align: stretch !important;
     -ms-grid-row-align: stretch !important;
     align-self: stretch !important;
+  }
+}
+
+/* --- Responsive Navbar Fixes --- */
+@media (max-width: 991.98px) {
+  .ftco-navbar-light {
+    width: 100vw;
+    left: 0;
+    right: 0;
+    z-index: 1050;
+  }
+  .ftco-navbar-light .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: #181c23;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 0 1rem 1rem 1rem;
+    z-index: 1051;
+  }
+  .ftco-navbar-light .navbar-nav {
+    width: 100%;
+    text-align: left;
+    background: none;
+    margin: 0;
+    padding: 0.5rem 0 0 0;
+  }
+  .ftco-navbar-light .navbar-nav .nav-item {
+    width: 100%;
+    margin: 0;
+  }
+  .ftco-navbar-light .navbar-nav .nav-link {
+    width: 100%;
+    padding: 0.75rem 0;
+    color: #fff !important;
+    border-bottom: 1px solid #232733;
+    text-align: left;
+  }
+  .ftco-navbar-light .navbar-nav .nav-link:last-child {
+    border-bottom: none;
+  }
+  .ftco-navbar-light .navbar-toggler {
+    z-index: 1100;
+    position: relative;
+  }
+}
+
+/* --- Mobile (320px-480px) Responsive Fixes --- */
+@media (max-width: 480px) {
+  html { font-size: 14px; }
+  body, html { overflow-x: hidden; }
+  .container, .ftco-navbar-light .container {
+    padding-left: 6px;
+    padding-right: 6px;
+    max-width: 100vw;
+  }
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .card, .blog-modern-card, .blog-glass-card {
+    margin-bottom: 1.2rem !important;
+    border-radius: 0.7rem !important;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    padding: 0.5rem 0.5rem 0.7rem 0.5rem !important;
+  }
+  .card-body, .blog-modern-card .card-body, .blog-glass-card .card-body {
+    padding: 0.7rem 0.5rem !important;
+  }
+  .ftco-navbar-light .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+  .ftco-navbar-light .navbar-brand {
+    font-size: 1.1rem;
+    padding-left: 0;
+    margin-right: 0;
+    flex: 1 1 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .ftco-navbar-light .navbar-toggler {
+    position: static;
+    margin-left: 0.5rem;
+    font-size: 1.2rem;
+    flex: 0 0 auto;
+  }
+  .ftco-navbar-light .navbar-collapse {
+    width: 100vw;
+    left: 0;
+    padding: 0 0.5rem 1rem 0.5rem;
+  }
+  .ftco-navbar-light .navbar-nav {
+    width: 100%;
+    padding: 0.5rem 0 0 0;
+  }
+  .ftco-navbar-light .navbar-nav .nav-link {
+    font-size: 1rem;
+    padding: 0.8rem 0.2rem;
+    word-break: break-word;
+    white-space: normal;
+    text-align: left;
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+  .minimal-footer {
+    padding: 1.2rem 0.5rem 0.7rem 0.5rem;
+    font-size: 0.98rem;
+    text-align: left;
+  }
+  .minimal-footer .row.mb-5.align-items-start {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+  .minimal-footer .col-md-5, .minimal-footer .col-md-7 {
+    max-width: 100%;
+    flex: 0 0 100%;
+    margin-bottom: 1.2rem;
+  }
+  .minimal-footer .ftco-heading-2 {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+  .minimal-footer .footer-contact-form .form-control,
+  .minimal-footer .footer-contact-form button[type="submit"] {
+    font-size: 1rem;
+    padding: 0.6rem 0.7rem;
+  }
+  .minimal-footer .footer-contact {
+    font-size: 0.97rem;
+    padding-left: 0;
+  }
+  .minimal-footer .footer-contact li {
+    gap: 0.5em;
+    margin-bottom: 0.3rem;
   }
 }
 
@@ -13260,6 +13410,63 @@ h5,
     padding-left: 15px;
     padding-right: 15px;
   }
+  .ftco-navbar-light .container {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0 10px;
+  }
+  .ftco-navbar-light .navbar-brand {
+    float: left;
+    margin-right: 0;
+    padding-left: 0;
+  }
+  .ftco-navbar-light .navbar-toggler {
+    float: right;
+    margin-left: auto;
+    margin-right: 0;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    z-index: 1100;
+  }
+  .ftco-navbar-light .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100vw;
+    background: #181c23;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+    padding: 0 1rem 1rem 1rem;
+    z-index: 1051;
+    display: none;
+  }
+  .ftco-navbar-light .navbar-collapse.show {
+    display: block;
+  }
+  .ftco-navbar-light .navbar-nav {
+    width: 100%;
+    text-align: left;
+    background: none;
+    margin: 0;
+    padding: 0.5rem 0 0 0;
+    list-style: none;
+  }
+  .ftco-navbar-light .navbar-nav .nav-item {
+    width: 100%;
+    margin: 0;
+    list-style: none;
+  }
+  .ftco-navbar-light .navbar-nav .nav-link {
+    width: 100%;
+    padding: 0.75rem 0;
+    color: #fff !important;
+    border-bottom: 1px solid #232733;
+    text-align: left;
+    background: none;
+  }
+  .ftco-navbar-light .navbar-nav .nav-link:last-child {
+    border-bottom: none;
+  }
 }
 
 .ftco-navbar-light .container {
@@ -14062,8 +14269,8 @@ h5,
 
 .btn.btn-primary.btn-outline-primary:hover {
   border: 2px solid transparent !important;
-  background: #ffbd39 !important;
-  color: #fff !important;
+  background: #ffbd39;
+  color: #fff;
 }
 
 .btn.btn-secondary {

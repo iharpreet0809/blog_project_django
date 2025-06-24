@@ -5,7 +5,7 @@
 <head>
 	<title>{% block title %}Blog{% endblock %}</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, maximum-scale=1.0, user-scalable=no">
 	
 	{% block meta %}
 	<meta name="description" content="{% block description %}Full Stack Engineer specializing in Development, Data Analysis, Machine Learning, and DevOps{% endblock %}">
@@ -44,7 +44,7 @@
 
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
 
-	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar" aria-label="Main Navigation">
 		<div class="container">
 			<a class="navbar-brand" href="/">Digital Diary</a>
 			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
@@ -56,9 +56,9 @@
 				<ul class="navbar-nav nav ml-auto">
 					<li class="nav-item"><a href="{% url 'blog_list' %}#home-section" class="nav-link"><span>Home</span></a></li>
 					<li class="nav-item"><a href="{% url 'blog_list' %}#about-section" class="nav-link"><span>About</span></a></li>
-					<li class="nav-item"><a href="{% url 'blog_list' %}#resume-section" class="nav-link"><span>Resume</span></a></li>
+					{% comment %} <li class="nav-item"><a href="{% url 'blog_list' %}#resume-section" class="nav-link"><span>Resume</span></a></li>
 					<li class="nav-item"><a href="{% url 'blog_list' %}#project-section" class="nav-link"><span>Projects</span></a></li>
-					<li class="nav-item"><a href="{% url 'blog_list' %}" class="nav-link"><span>Blog</span></a></li>
+					<li class="nav-item"><a href="{% url 'blog_list' %}" class="nav-link"><span>Blog</span></a></li> {% endcomment %}
 					<li class="nav-item"><a href="{% url 'blog_list' %}#contact-section" class="nav-link"><span>Contact</span></a></li>
 				</ul>
 			</div>
@@ -70,9 +70,9 @@
 	{% endblock %}
 
 	<!-- Footer -->
-	<footer class="ftco-footer ftco-bg-dark ftco-section minimal-footer">
+	<footer class="ftco-footer ftco-bg-dark ftco-section minimal-footer" role="contentinfo" aria-label="Site Footer">
 		<div class="container">
-			<div class="row mb-5 align-items-start">
+			<div class="row mb-5 align-items-start mobile-stack-footer">
 				<div class="col-md-5 mb-4 mb-md-0">
 					<div class="ftco-footer-widget mb-4">
 						<h2 class="ftco-heading-2 mb-3">About</h2>
@@ -150,6 +150,16 @@
 
 	{% block extra_js %}
 	<!-- Additional JavaScript for child templates -->
+	<script>
+	  // Close navbar on nav-link click (mobile)
+	  $(document).ready(function() {
+	    $('.navbar-nav .nav-link').on('click', function(){
+	      if($('.navbar-toggler').is(':visible')) {
+	        $('.navbar-toggler').click();
+	      }
+	    });
+	  });
+	</script>
 	{% endblock %}
 
 	<style>

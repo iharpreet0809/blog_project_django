@@ -286,7 +286,7 @@
                         </div>
 
                         <!-- Title -->
-                        <h1 class="display-4 mb-3">{{ post.title }}</h1>
+                        <h3 class="display-4 mb-3">{{ post.title }}</h3>
 
                         <!-- Meta Information  -->
                          <div class="d-flex flex-wrap align-items-center text-muted mb-4">
@@ -315,13 +315,6 @@
                         </div>
                         {% endif %}
 
-                        <!-- Excerpt -->
-                        {% if post.excerpt %}
-                        <div class="lead mb-4">
-                            {{ post.excerpt }}
-                        </div>
-                        {% endif %}
-
                         <!-- Tags -->
                         {% if post.tags.all %}
                         <div class="mb-4">
@@ -331,6 +324,15 @@
                             {% endfor %}
                         </div>
                         {% endif %}
+
+                        <!-- Excerpt -->
+                        {% if post.excerpt %}
+                        <div class="lead mb-4">
+                            {{ post.excerpt }}
+                        </div>
+                        {% endif %}
+
+                        
                     </header>
 
                     <!-- Article Content -->
