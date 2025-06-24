@@ -3,12 +3,15 @@
 
 A sophisticated full-stack blogging platform built with Django and MySQL, featuring a sleek UI, robust backend, and seamless user experience. This project showcases clean architecture, modern development practices, and attention to performance and security.
 
-Key Features:<BR>
-✨ Modern functionality of writing for Author<BR>
-🔒 Secure Authentication<BR>
-📱 Mobile-First Design<BR>
-🎯 SEO Optimized<BR>
-⚡ High Performance<BR>
+### Blog Features
+- **Rich Text Editor**: CKEditor for creating formatted blog posts
+- **Categories & Tags**: Organize content with categories and flexible tagging
+- **Search & Filter**: Advanced search across titles, content, and tags
+- **Pagination**: Efficient content browsing with pagination
+- **RSS Feed**: Subscribe to blog updates
+- **View Tracking**: Track post popularity
+- **Featured Posts**: Highlight important content
+- **Related Posts**: Suggest relevant content to readers
 ---
 
 ## Getting Started
