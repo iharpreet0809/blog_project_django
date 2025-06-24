@@ -3,12 +3,12 @@
 
 A sophisticated full-stack blogging platform built with Django and MySQL, featuring a sleek UI, robust backend, and seamless user experience. This project showcases clean architecture, modern development practices, and attention to performance and security.
 
-Key Features:
-✨ Responsive Glass-morphic UI
-🔒 Secure Authentication
-📱 Mobile-First Design
-🎯 SEO Optimized
-⚡ High Performance
+Key Features:<BR>
+✨ Responsive Glass-morphic UI <BR>
+🔒 Secure Authentication<BR>
+📱 Mobile-First Design<BR>
+🎯 SEO Optimized<BR>
+⚡ High Performance<BR>
 ---
 
 ## Getting Started
