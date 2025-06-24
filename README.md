@@ -98,7 +98,10 @@ This is the Full fledged Blogging project in Django with mysql
 #2. Blog Detail
 ![Blog Detail](screenshot/blog_detail.png)
 
-#3. Admin Panel
+#3. About & Contact
+![Admin Panel](screenshot/about_contact.png)
+
+#. Admin Panel
 ![Admin Panel](screenshot/admin_home.png)
 
 ---
