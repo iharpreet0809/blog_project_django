@@ -4,7 +4,7 @@
 A sophisticated full-stack blogging platform built with Django and MySQL, featuring a sleek UI, robust backend, and seamless user experience. This project showcases clean architecture, modern development practices, and attention to performance and security.
 
 Key Features:<BR>
-✨ Responsive Glass-morphic UI <BR>
+✨ Modern functionality of writing for Author<BR>
 🔒 Secure Authentication<BR>
 📱 Mobile-First Design<BR>
 🎯 SEO Optimized<BR>
