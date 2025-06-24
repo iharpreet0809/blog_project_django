@@ -93,7 +93,7 @@ This is the Full fledged Blogging project in Django with mysql
 
 <!-- Add screenshots here -->
 1. Home Page
-![Home Page](PUT_HOME_PAGE_IMAGE_LINK_HERE)
+![Home Page](screenshot/homepage.png)
 
 2. Blog Detail
 ![Blog Detail](PUT_BLOG_DETAIL_IMAGE_LINK_HERE)
