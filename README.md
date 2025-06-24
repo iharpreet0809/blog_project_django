@@ -111,6 +111,13 @@ Contributions are welcome! Please open issues or submit pull requests for improv
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [GPU License](LICENSE).
+
+---
+
+## Contact
+
+| <a href="https://www.linkedin.com/in/harpreet22/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn" height="22" style="vertical-align:middle;"/></a> | [![Email](https://img.shields.io/badge/email-talkwithharpreet@gmail.com-red?style=flat-square&logo=gmail)](mailto:talkwithharpreet@gmail.com) |
+|:---:|:---:|
 
 ---
